@@ -18,15 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::get('/post/{id}', 'PostController@show')->name('show.post');
 Route::get('/post/edit/{id}', 'PostController@edit')->name('edit.post');
 Route::post('/post/edit/{id}', 'PostController@update')->name('update.post');
 Route::get('/post/delete/{id}', 'PostController@destroy')->name('delete.post');
+Route::get('/user/{id}', 'HomeController@user')->name('user');
+Route::get('/user/edit/{id}', 'HomeController@edit')->name('user.edit');
+Route::post('/user/edit/{id}', 'HomeController@update')->name('user.update');
 
 
-
-Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 
 Route::prefix('admin')->group(function() {
