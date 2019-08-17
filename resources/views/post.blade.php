@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-@if (Session::has('success'))
+@if (session('success'))
   <div class="alert alert-success alert-dismissible" role="alert" style="width: 30%; margin:0 auto;">
     <button type="button" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
     </button>
-        <strong>{{ Session::get('success') }}</strong>
+        <strong>{{ session('success') }}</strong>
   </div>
 @endif
-@if (Session::has('success-update'))
+@if (session('success-update'))
   <div class="alert alert-success alert-dismissible" role="alert" style="width: 30%; margin:0 auto;">
     <button type="button" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
     </button>
-        <strong>{{ Session::get('success-update') }}</strong>
+        <strong>{{ session('success-update') }}</strong>
   </div>
   <br>
 @endif

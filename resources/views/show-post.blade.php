@@ -21,7 +21,7 @@
                   @if (!Auth::guest())
                     @if (Auth::guard('web')->user()->id == $post->user_id)
                       <div class="form-group" style="float: right;">
-                        <a class="btn btn-primary btn-sm" href="{{route('edit.post', $post->id)}}"><strong>Edit</strong></a></span>
+                        <a class="btn btn-info btn-sm" href="{{route('edit.post', $post->id)}}"><strong>Edit</strong></a></span>
                         <a class="btn btn-danger btn-sm" href="{{route('delete.post', $post->id)}}" onclick="return confirm('yakin akan dihapus?');"><strong>Delete</strong></a></span>
                       </div>
                     @endif
